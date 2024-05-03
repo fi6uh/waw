@@ -1,0 +1,9 @@
+{
+  "host": "https://www.jsontest.com",
+  "endpoints": {
+    "home": {
+      "method": "GET",
+      "endpoint": "/"
+    }
+  }
+}
