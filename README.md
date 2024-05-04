@@ -16,7 +16,23 @@ WaW is a lightweight Python tool designed to simplify web requests to various AP
 - **Make Requests**: Use the call method of the API instance to make requests to defined endpoints, optionally passing parameters and URL arguments.
 - **Debug Responses (Optional)**: For debugging purposes, utilize the Debug class to print detailed information about request and response objects.
 
-## Example
+### Example
+
+API spec:
+
+```
+{
+  "host": "https://stackoverflow.com",
+  "endpoints": {
+    "questions": {
+      "method": "GET",
+      "endpoint": "/questions/{qid}/{title}"
+    }
+  }
+}
+```
+
+Python:
 
 ```
 import API
