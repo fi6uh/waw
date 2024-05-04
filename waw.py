@@ -53,12 +53,12 @@ class API:
                 data = json.load(fh)
         return data
 
-    def call(self, function, parameters={}, url_args={}):
+    def call(self, function, parameters={}, path_params={}):
         if function in self.config["endpoints"].keys():
             method = self.config["endpoints"][function]["method"]
             endpoint = self.config["endpoints"][function]["endpoint"]
             if "{" in endpoint and "}" in endpoint:
-                endpoint = endpoint.format(**url_args)
+                endpoint = endpoint.format(**path_params)
             response = self.client.simple_req(method, endpoint, parameters)
             return response
 
@@ -102,7 +102,7 @@ def main():
         "qid": 4,
         "title": "how-to-convert-decimal-to-double-in-c"
     }
-    data = api.call("questions", url_args=first_so_question)
+    data = api.call("questions", path_params=first_so_question)
 
     debugger = Debug(data)
     print(debugger)
