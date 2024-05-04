@@ -1,0 +1,9 @@
+{
+  "host": "https://stackoverflow.com",
+  "endpoints": {
+    "questions": {
+      "method": "GET",
+      "endpoint": "/questions/{qid}/{title}"
+    }
+  }
+}
